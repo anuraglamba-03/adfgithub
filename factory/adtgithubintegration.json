@@ -1,0 +1,15 @@
+{
+	"name": "adtgithubintegration",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a1c51000-37fe-4c63-851d-69ffbb06a010",
+		"tenantId": "e0275bc0-33e3-4f43-8688-64d5b044a431"
+	}
+}
