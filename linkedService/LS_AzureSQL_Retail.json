@@ -1,0 +1,37 @@
+{
+	"name": "LS_AzureSQL_Retail",
+	"properties": {
+		"parameters": {
+			"servername": {
+				"type": "string",
+				"defaultValue": "0"
+			},
+			"databasename": {
+				"type": "string",
+				"defaultValue": "0"
+			},
+			"username": {
+				"type": "string",
+				"defaultValue": "0"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "@{linkedService().servername\n}",
+			"database": "@{linkedService().databasename\n}",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "@{linkedService().username}",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sqlpassword"
+			}
+		}
+	}
+}
